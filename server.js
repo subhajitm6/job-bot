@@ -1,3 +1,8 @@
+const { execSync } = require('child_process');
+
+// Install playwright browsers when server starts (not during build)
+execSync('npx playwright install --with-deps', { stdio: 'inherit' });
+
 const express = require('express');
 const applyJob = require('./apply');
 
